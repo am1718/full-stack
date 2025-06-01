@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listener Demo</title>
+  <style>
+    #myImage {
+      width: 200px;
+      border: 3px solid black;
+      transition: border-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button -->
+  <button id="myButton">Click Me</button>
+
+  <br><br>
+
+  <!-- Image -->
+  <img id="myImage" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Sample Image">
+
+  <script>
+    // ✅ 1. Button click
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", function() {
+      console.log("Button clicked!");
+    });
+
+    // ✅ 2. Mouseover on image
+    const image = document.getElementById("myImage");
+    image.addEventListener("mouseover", function() {
+      image.style.borderColor = "red";
+    });
+
+    // Optional: reset border on mouseout
+    image.addEventListener("mouseout", function() {
+      image.style.borderColor = "black";
+    });
+
+    // ✅ 3. Key press detection
+    document.addEventListener("keydown", function(event) {
+      console.log("Key pressed:", event.key);
+    });
+  </script>
+
+</body>
+</html>
